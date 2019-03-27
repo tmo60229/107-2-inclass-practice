@@ -9,3 +9,16 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r}
+88 -> A
+```
+
+
+```{r}
+62 + A  
+```
+
+```{r}
+avactor{1 , 2 ,3}
+```
+
