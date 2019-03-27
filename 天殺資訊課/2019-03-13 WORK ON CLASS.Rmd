@@ -22,4 +22,92 @@ knitr::opts_chunk$set(echo = TRUE)
 avactor{1 , 2 ,3}
 ```
 
+```{r}
+library(lubridate)
+```
+```{r}
+dtObject<-ymd_hms("1970-01-01 00:02:53") 
+```
+
+```{r}
+dtObjectVector<-ymd_hms(
+  c("1970-01-01 00:02:53",
+    "1980-02-11 11:25:22")
+)
+```
+
+```{r}
+class(dtObject)
+```
+
+```{r}
+Sys.timezone()
+```
+```{r}
+twDateTime <- ymd_hms("2019-03-27 14:04:00", tz="Asia/Taipei")
+```
+
+```{r}
+LisbonDateTime <- with_tz(twDateTime,tzone="Europe/Lisbon")
+LisbonDateTime
+```
+```{r}
+twDateTime <- mdy ("March 3, 2019", tz="Asia/Taipei")
+twDateTime
+```
+```{r}
+aL <- c(1L, 5L, -3L)
+bL <- c(-2L, -4L, 8L)
+aL+bL
+```
+
+```{r}
+aL+4
+```
+```{r}
+aL**2
+aL*2
+aL/bL
+```
+```{r}
+startingDate <- ymd("2000-02-17")
+```
+
+```{r}
+startingDate + years(1)
+```
+```{r}
+startingDate + dyears(1)
+```
+```{r}
+x <- 5
+y <- 7
+x < y
+```
+
+```{r}
+x == y
+```
+
+```{r}
+x2 <- c(1,5,10)
+y2 <- c(-1,5,20)
+```
+```{r}
+x2 == y2
+```
+```{r}
+x4 <- c(1,5,8)
+y4 <- c(5,8)
+x4 %in% y4
+```
+```{r}
+x2 <- c(1,NA,10)
+y2 <- c(-1,NA,20)
+
+x3 <- c(NA,"小花")
+y3 <- c(NA,"小華")
+is.na(x2)
+
+```
 
