@@ -192,6 +192,6 @@ y5=="女"
 ```
 
 ```{r}
-xor(x5 %in% greatTaipei, y5=="女")
+xor(x5 %in% greatTaipei, y5=="女") 
 ```
 
