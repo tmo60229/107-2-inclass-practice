@@ -103,11 +103,55 @@ x4 %in% y4
 ```
 ```{r}
 x2 <- c(1,NA,10)
-y2 <- c(-1,NA,20)
+y2 <- c(NA,NA,20)
 
 x3 <- c(NA,"小花")
 y3 <- c(NA,"小華")
-is.na(x2)
 
+is.na(x2)
+```
+```{r}
+is.na(y3)
+```
+
+```{r}
+x3 <- c("小明","小花")
+y3 <- c("小明","小華")
+```
+
+```{r}
+x3 == y3
+```
+```{r}
+x5 <- c("台北市","新北市","高雄市")
+y5 <- c("台北市","新北市")
+
+x5 %in% y5
+```
+
+
+
+```{r}
+library (readr)
+exData2 <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/exData2.csv")
+currency <- exData2$ 幣別
+```
+```{r}
+head(currency)
+```
+```{r}
+class(currency)
+```
+```{r}
+currency < - as.factor(currency)
+class(currency)
+```
+
+```{r}
+levels(currency)
+```
+
+```{r}
+length(levels(currency))
 ```
 
