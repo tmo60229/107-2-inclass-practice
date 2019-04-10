@@ -9,3 +9,10 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r}
+library(readr)
+githubData <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/githubData.csv")
+username <- githubData$`GitHub username`[11:16]
+reponame <- githubData$`GitHub repo name`[11:16]
+str_c("http://github.com","/",username,"/",reponame)
+```
