@@ -155,3 +155,18 @@ levels(currency)
 length(levels(currency))
 ```
 
+```{r}
+currency2 <- c("日元","美元","日元")
+currency2
+```
+
+
+```{r}
+sum(currency2 == "日元")
+```
+
+```{r}
+head(currency)
+sum(currency == "日圓JPY/USD")
+```
+
