@@ -137,6 +137,10 @@ exData2 <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/mas
 currency <- exData2$ 幣別
 ```
 ```{r}
+install.packages("readr")
+```
+
+```{r}
 head(currency)
 ```
 ```{r}
@@ -194,4 +198,63 @@ y5=="女"
 ```{r}
 xor(x5 %in% greatTaipei, y5=="女") 
 ```
+```{r}
+install.packages("stringr")
+```
+
+```{r}
+library(stringr)
+```
+
+```{r}
+library(readr)
+transcriptDataFinal <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/transcriptDataFinal.csv")
+courseType <- transcriptDataFinal$`必選修類別（必∕選∕通）`
+major <- transcriptDataFinal$學系
+studentID <- transcriptDataFinal$學號
+grade <- transcriptDataFinal$學期成績
+```
+
+```{r}
+course <- c("個體經濟學","投資學","總體經濟學")
+```
+```{r}
+month <- c("3","4","2")
+day <- c("11","5","7")
+```
+
+```{r}
+chineseDate <- c("3月11日","4月5日","2月7日")
+```
+
+
+```{r}
+studentID<-c(
+  '410177115','410176080','410174233','410177011','410182045','410176014')
+系別<-str_sub(studentID,5,6)
+系別
+入學年<-str_sub(studentID,2,4)
+入學年
+```
+
+```{r}
+char1 <- c("月","月","月")
+char2 <- c("日","日","日")
+month
+char1
+day 
+char2
+str_c(month,char1,day,char2)
+```
+```{r}
+str_c(char2,char1,day,month)
+```
+
+```{r}
+month
+day
+str_c(month,day, sep="-")
+str_c(day,month, sep = "+")
+```
+
 
