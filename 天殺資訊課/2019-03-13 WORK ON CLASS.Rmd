@@ -257,4 +257,21 @@ str_c(month,day, sep="-")
 str_c(day,month, sep = "+")
 ```
 
+```{r}
+plasticContainer <- list(
+  greenBox=c("paper","scissor"),     # location 1
+  redBox=c(1,3,2.5),               # location 2
+  blueBox=c(TRUE,FALSE,TRUE,TRUE)    # location 3
+)
+```
+
+```{r}
+plasticContainer[["greenBox"]] 
+plasticContainer[[1]]
+```
+
+```{r}
+x <- plasticContainer[["greenBox"]] 
+x[[1]]
+```
 
