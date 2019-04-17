@@ -312,4 +312,25 @@ plasticContainer[c(T,F,T)]
 成績單[c(FALSE,TRUE,TRUE)]
 ```
 
+```{r}
+plasticContainer$greenBox
+plasticContainer[["greenBox"]]
+```
+```{r}
+install.packages("httr, stringr")
+```
+```{r}
+your_github_username <- "tpemartin"
+your_practice_reponame <- "107-2-inclass-practice"
+library(httr)
+library(stringr)
+str_replace_all(
+  "https://api.github.com/repos/:owner/:repo/commits",
+  c(
+    ":owner"=your_github_username,
+    ":repo"=your_practice_reponame
+    )
+  ) -> commitCheckStatement
+commitCheck <- content(GET(commitCheckStatement))
+```
 
