@@ -274,4 +274,42 @@ plasticContainer[[1]]
 x <- plasticContainer[["greenBox"]] 
 x[[1]]
 ```
+```{r}
+成績單 <- c(
+  個經=90,
+  總經=77,
+  統計=88
+)
+```
+```{r}
+成績單[[1]]
+```
+```{r}
+plasticContainer[c("greenBox","redBox")] 
+plasticContainer[c(1,2)]
+```
+```{r}
+plasticContainer[c("greenBox","redBox")] 
+
+```
+
+```{r}
+extract1 <- plasticContainer[c("greenBox")]
+```
+```{r}
+extract2 <- plasticContainer[[c("greenBox")]]
+```
+```{r}
+extract1[[1]][[1]]
+extract2[[1]]
+```
+```{r}
+length(plasticContainer)
+plasticContainer[c(T,F,T)]
+```
+```{r}
+成績單
+成績單[c(FALSE,TRUE,TRUE)]
+```
+
 
