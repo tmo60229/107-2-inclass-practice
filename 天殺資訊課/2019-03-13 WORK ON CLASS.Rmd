@@ -423,4 +423,33 @@ StuList[[2]][3]
 class(StuDF)
 typeof(StuDF)
 ```
+```{r}
+LETTERS # R內設元素值為英文字母群的character vector
+chosenLETTERS <- LETTERS[1:15]
+matObj1 <- matrix(chosenLETTERS,5,3)
+matObj1
+```
+```{r}
+chosenLETTERS[8]
+matObj1[8]
+```
+```{r}
+matObj1
+matObj1[3,2] 
+matObj1[c(F,F,TRUE,F,F),c(F,TRUE,F)]
+```
+
+```{r}
+matObj1[c(1,5),c(2,3)]
+```
+```{r}
+StuDF
+StuDF[c("姓名","成績")] 
+StuDF[1:5,c("姓名","成績")] 
+```
+
+```{r}
+library(readr)
+classSurvey <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/classSurvey.csv")
+```
 
