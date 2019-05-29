@@ -452,4 +452,184 @@ StuDF[1:5,c("姓名","成績")]
 library(readr)
 classSurvey <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/classSurvey.csv")
 ```
+```{r}
+StuDF2 <- data.frame(
+  學號=c(172,214,322,425,517),
+  姓名=c("小明","大雄","胖虎","小新","大白"),
+  成績=c(80,60,90,70,50),
+  stringsAsFactors = FALSE
+  )
+StuDF2 
+```
+```{r}
+colnames(StuDF2)[c(2,3)] <- c("name","grades")
+StuDF2
+```
+```{r}
+colnames(StuDF2)
+```
+
+```{r}
+b <- list(
+  元素1=1,
+  元素2="Hello",
+  元素3=TRUE
+)
+b[[3]]<-"FALSE"
+b[[5]]<-7
+b
+```
+```{r}
+b <- list(
+元素1=1,
+元素2="Hello",
+元素3=TRUE
+)
+
+b[c(3,5)] <- c('False','7')
+b
+
+b <- list(
+元素1=1,
+元素2="Hello",
+元素3=TRUE
+)
+
+b[c(3,5)] <- c('False','7')
+b
+```
+```{r}
+b <- list(
+  元素1=1,
+  元素2="Hello",
+  元素3=TRUE
+)
+b
+b[[3]] <- "False"
+b[[5]] <- "7"
+b
+b$元素2 <- "Hi"
+b$`新成員` <- c(2L,5L,1L)
+b
+_
+
+```
+```{r}
+library(readr)
+exData3 <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/exData3.csv",
+                    col_types = cols(
+                      匯率 = col_number(),
+                      期間 = col_character()))
+```
+```{r}
+library(lubridate)
+exData3$期間 <- ymd(exData3$期間)
+class(exData3$期間)
+```
+```{r}
+isAsiaCrisis <- ( date >="1997-06-01" & date<="1998-12-01")
+isAsiaCrisis
+```
+```{r}
+log<-transcriptDataFinal$學號=="92aS67fee"
+transcriptDataFinal[log,]
+```
+```{r}
+num <- function(x,.alpha){
+  num1 <- x+.alpha # 程序產生output值
+  return(num1) # 傳回output值
+}
+num(2,4)
+```
+```{r}
+Supply <- function(a,b,p){
+  o <- a+b*p
+  return(o)
+}
+
+Supply(1,2,3)
+```
+```{r}
+gpa_fun <- function(studentID){
+  transcriptDataFinal$學號==studentID -> logiChosenStudent
+
+  subSample <- transcriptDataFinal[logiChosenStudent,]
+
+  sum(subSample$學期成績*subSample$學分數)/
+    sum(subSample$學分數) -> GPA
+  return(GPA)
+}
+
+```
+```{r}
+invoiceList$訂單時區 == "America/New_York" -> nyLogical
+invoiceList$訂單時區 == "Asia/Taipei" -> tpLogical
+invoiceList$nyLogical <- nyLogical
+invoiceList$tpLogical <- tpLogical
+
+nyDateTime<-ymd_hms(invoiceList$訂單時區之下單時間[nyLogical],tz="America/New_York")
+
+tpDateTime<-ymd_hms(invoiceList$訂單時區之下單時間[tpLogical],tz="Asia/Taipei")
+
+invoiceList$UTC時間[nyLogical] <- with_tz(nyDateTime,tz="UTC")
+
+invoiceList$UTC時間[tpLogical] <- with_tz(tpDateTime,tz="UTC")
+
+invoiceList
+```
+```{r}
+ymd_hms_tzChange <- function(ny){
+ ny <- ymd_hms("1973-02-21 12:05:22",tz="America/New_York")
+tp <- with_tz(ny,tz="成Asia/Taipei")
+  return(tp)
+}
+  
+```
+
+```{r}
+a <- readline(prompt = "-1")
+if(a < 0) {
+  print("a為負值")
+}
+```
+
+```{r}
+demand_supply_fun<-function(P,a,b,c,d){
+  Qs<-a+P*b
+  Qd<-c+P*d
+  overdemand<-Qs-Qd
+  return(list(
+    "供給"=Qs,
+    "需求"=Qd,
+    "超額供給"=overdemand
+  ))
+}
+```
+
+```{r}
+gpa_fun <- function(studentID){
+  transcriptDataFinal$學號==studentID -> logiChosenStudent
+
+  subSample <- transcriptDataFinal[logiChosenStudent,]
+
+  sum(subSample$學期成績*subSample$學分數)/
+    sum(subSample$學分數) -> GPA
+  if(studentID %in% transcriptDataFinal$學號){
+  return(GPA)
+  }else{
+      message("查無此學號")
+    }
+}
+
+gpa_fun("92aS67fee") # 顯示82.85276
+gpa_fun("aa829838s") # 查無此學號
+```
+
+```{r}
+utility_cobb_douglass <- function(x,y,.alpha,.beta){
+  utilValue <- x^.alpha*y^.beta # 程序產生output值
+  return(utilValue) # 傳回output值
+}
+
+```
 
