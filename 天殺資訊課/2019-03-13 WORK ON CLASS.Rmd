@@ -687,3 +687,13 @@ a>2
 any(a>2)
 ```
 
+```{r}
+saveCommitAuthor <-
+  vector("character",length(commitHistory)) # 0.
+for(i in seq_along(commitHistory)){
+  commitHistory[[i]]$commit$author$name -> saveCommitAuthor[[i]]
+}
+
+saveCommitAuthor
+```
+
